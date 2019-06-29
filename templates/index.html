@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Meraki Wireless Errors</title>
+	<link rel="stylesheet" href="/static/style.css">
+	<link rel="shortcut icon" href="/static/favicon.ico" />
+  <style>
+  h1 { font-size: 18pt; color: #6FB73A; }
+  .networkfield {
+    width: 500px;
+    height: 40px;
+  }}
+  .addressfield {
+    width: 500px;
+        height: 75px;
+  }
+  .serialfield {
+        width: 300px;
+        height: 30px;
+        float: left;
+        clear: none;
+  }
+  .namefield {
+        height: 30px;
+        width: 300px;
+        float: left;
+        clear: none;
+  }
+  .clear {
+        clear: both;
+  }
+  </style>
+</head>
+
+<body>
+<div id="tableWrapper">
+	<div id="sidebar">
+		<img src="https://n7.meraki.com/images/cisco-meraki-white.svg?1481053946" />
+		<div class="menuItem"><a href="/">Meraki Wireless Errors</a></div>
+	</div>
+	<div id="content">
+
+        <img src="/static/logo.png" width="300" />
+        <div id="title"><h1>Meraki Wireless Errors</h1></div>
+	<div id="instructions">
+	<p>Instructions:</p>
+	</div>
+        <div class="clear"></div>
+     <form action="" method="post" novalidate>
+         {{ form.hidden_tag() }}
+         <div class="networkfield">
+             {{ form.networkField.label }}: 
+             {{ form.networkField() }}
+             {% for error in form.networkField.errors %}
+             <span style="color: red;">[{{ error }}]</span>
+             {% endfor %}
+         </div>
+         <div class="clear"></div>
+         <div class="submitfield">{{ form.submitField() }}</div>
+     </form>
+     </div>
+ </body>
+ </html>
